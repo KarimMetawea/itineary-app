@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D911773D226E964700DA1FB5 /* CreateTripVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D911773B226E964700DA1FB5 /* CreateTripVC.storyboard */; };
+		D911773F226E96A800DA1FB5 /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D911773E226E96A800DA1FB5 /* CreateTripViewController.swift */; };
+		D9117743226EA69200DA1FB5 /* PopOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9117742226EA69200DA1FB5 /* PopOverView.swift */; };
+		D917E39F226B6C1A00BF098F /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917E39E226B6C1A00BF098F /* UIViewExtension.swift */; };
+		D917E3A2226B78FB00BF098F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917E3A1226B78FB00BF098F /* Theme.swift */; };
+		D917E3A6226B7FC600BF098F /* colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D917E3A5226B7FC600BF098F /* colors.xcassets */; };
+		D917E3A8226BE86200BF098F /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917E3A7226BE86200BF098F /* UIButtonExtension.swift */; };
 		D9D179E32262BB9B002942DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D179E22262BB9B002942DD /* AppDelegate.swift */; };
 		D9D179E52262BB9B002942DD /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D179E42262BB9B002942DD /* TripsViewController.swift */; };
 		D9D179E82262BB9B002942DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D179E62262BB9B002942DD /* Main.storyboard */; };
@@ -19,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D911773C226E964700DA1FB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "itineray-app/FirstScreen/Base.lproj/CreateTripVC.storyboard"; sourceTree = "<group>"; };
+		D911773E226E96A800DA1FB5 /* CreateTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
+		D9117742226EA69200DA1FB5 /* PopOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverView.swift; sourceTree = "<group>"; };
+		D917E39E226B6C1A00BF098F /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		D917E3A1226B78FB00BF098F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		D917E3A5226B7FC600BF098F /* colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = colors.xcassets; sourceTree = "<group>"; };
+		D917E3A7226BE86200BF098F /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		D9D179DF2262BB9B002942DD /* itineray-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "itineray-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D179E22262BB9B002942DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9D179E42262BB9B002942DD /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +57,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D911773A226E95BE00DA1FB5 /* createTripPopUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D911773B226E964700DA1FB5 /* CreateTripVC.storyboard */,
+				D911773E226E96A800DA1FB5 /* CreateTripViewController.swift */,
+			);
+			path = createTripPopUpScreen;
+			sourceTree = "<group>";
+		};
+		D9117740226E96F700DA1FB5 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				D9D179F52262BC96002942DD /* tripsScreen */,
+				D911773A226E95BE00DA1FB5 /* createTripPopUpScreen */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		D9117741226EA66100DA1FB5 /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				D9117742226EA69200DA1FB5 /* PopOverView.swift */,
+			);
+			path = CustomControls;
+			sourceTree = "<group>";
+		};
+		D917E39D226B6BF300BF098F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D917E39E226B6C1A00BF098F /* UIViewExtension.swift */,
+				D917E3A7226BE86200BF098F /* UIButtonExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D917E3A0226B786900BF098F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9117741226EA66100DA1FB5 /* CustomControls */,
+				D917E39D226B6BF300BF098F /* Extensions */,
+				D917E3A1226B78FB00BF098F /* Theme.swift */,
+				D917E3A5226B7FC600BF098F /* colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D9D179D62262BB9B002942DD = {
 			isa = PBXGroup;
 			children = (
@@ -62,15 +122,13 @@
 		D9D179E12262BB9B002942DD /* itineray-app */ = {
 			isa = PBXGroup;
 			children = (
-				D9D179F52262BC96002942DD /* FirstScreen */,
+				D9117740226E96F700DA1FB5 /* views */,
+				D917E3A0226B786900BF098F /* Resources */,
 				D9D179F42262BC74002942DD /* Model */,
 				D9D179E22262BB9B002942DD /* AppDelegate.swift */,
-				D9D179E42262BB9B002942DD /* TripsViewController.swift */,
-				D9D179E62262BB9B002942DD /* Main.storyboard */,
 				D9D179E92262BB9D002942DD /* Assets.xcassets */,
 				D9D179EB2262BB9D002942DD /* LaunchScreen.storyboard */,
 				D9D179EE2262BB9D002942DD /* Info.plist */,
-				D9E3360D2265274700112F6B /* TripsCell.swift */,
 			);
 			path = "itineray-app";
 			sourceTree = "<group>";
@@ -84,11 +142,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D9D179F52262BC96002942DD /* FirstScreen */ = {
+		D9D179F52262BC96002942DD /* tripsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				D9D179E62262BB9B002942DD /* Main.storyboard */,
+				D9D179E42262BB9B002942DD /* TripsViewController.swift */,
+				D9E3360D2265274700112F6B /* TripsCell.swift */,
 			);
-			path = FirstScreen;
+			path = tripsScreen;
 			sourceTree = "<group>";
 		};
 		D9D179F62262BCE5002942DD /* Trip */ = {
@@ -159,8 +220,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9D179ED2262BB9D002942DD /* LaunchScreen.storyboard in Resources */,
+				D917E3A6226B7FC600BF098F /* colors.xcassets in Resources */,
 				D9D179EA2262BB9D002942DD /* Assets.xcassets in Resources */,
 				D9D179E82262BB9B002942DD /* Main.storyboard in Resources */,
+				D911773D226E964700DA1FB5 /* CreateTripVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,14 +238,27 @@
 				D9D179FC2262C087002942DD /* DataModel.swift in Sources */,
 				D9D179E32262BB9B002942DD /* AppDelegate.swift in Sources */,
 				D9D179FA2262BD25002942DD /* TripFunctions.swift in Sources */,
+				D917E39F226B6C1A00BF098F /* UIViewExtension.swift in Sources */,
+				D917E3A8226BE86200BF098F /* UIButtonExtension.swift in Sources */,
+				D917E3A2226B78FB00BF098F /* Theme.swift in Sources */,
 				D9E3360E2265274700112F6B /* TripsCell.swift in Sources */,
 				D9D179F82262BD0F002942DD /* TripModel.swift in Sources */,
+				D911773F226E96A800DA1FB5 /* CreateTripViewController.swift in Sources */,
+				D9117743226EA69200DA1FB5 /* PopOverView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D911773B226E964700DA1FB5 /* CreateTripVC.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D911773C226E964700DA1FB5 /* Base */,
+			);
+			name = CreateTripVC.storyboard;
+			sourceTree = "<group>";
+		};
 		D9D179E62262BB9B002942DD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

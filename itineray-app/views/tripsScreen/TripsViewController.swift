@@ -8,19 +8,23 @@
 
 import UIKit
 
-class TripsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class TripsViewController: UIViewController{
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addTripButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
       tableView.delegate = self
       tableView.dataSource = self
+       addTripButton.roundAndMakeShadow()
         TripFunctions.readTrips {[weak self] in
             
          self?.tableView.reloadData()
         }
     }
     //MARK: UITableViewDataSource
+   }
+extension TripsViewController:UITableViewDelegate,UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -31,8 +35,9 @@ class TripsViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tripsCell", for: indexPath)
-        cell.textLabel?.text = DataModel.trips[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tripsCell", for: indexPath) as! TripsCell
+        cell.configureCell(trip: DataModel.trips[indexPath.row])
+        
         return cell
     }
     

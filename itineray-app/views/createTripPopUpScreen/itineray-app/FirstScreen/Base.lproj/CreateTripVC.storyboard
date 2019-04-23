@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CRg-we-ThH">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create Trip View Controller-->
+        <scene sceneID="a5L-qe-XtF">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="CRg-we-ThH" customClass="CreateTripViewController" customModule="itineray_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="71z-eX-LnY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cH-aW-wQ0" customClass="PopOverView" customModule="itineray_app" customModuleProvider="target">
+                                <rect key="frame" x="5" y="64" width="404" height="230"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="hn6-Ve-K6i">
+                                        <rect key="frame" x="10" y="10" width="384" height="210"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add a trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSh-io-64r">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="53.5"/>
+                                                <color key="backgroundColor" name="BackGround"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                                <color key="textColor" name="Tint"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kOe-xL-gwU">
+                                                <rect key="frame" x="0.0" y="78.5" width="384" height="53"/>
+                                                <color key="backgroundColor" red="0.1410615003" green="0.1967614674" blue="0.31037833120000002" alpha="0.61114083904109584" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" name="Tint"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="OvM-Uc-fEz">
+                                                <rect key="frame" x="0.0" y="156.5" width="384" height="53.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWb-zs-qZv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="162" height="53.5"/>
+                                                        <color key="backgroundColor" name="BackGround"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                                        <state key="normal" title="cancel">
+                                                            <color key="titleColor" name="Tint"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="cancelButtonPressed:" destination="CRg-we-ThH" eventType="touchUpInside" id="DXA-Ob-cSG"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0V-xa-zgp">
+                                                        <rect key="frame" x="222" y="0.0" width="162" height="53.5"/>
+                                                        <color key="backgroundColor" name="BackGround"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                                        <state key="normal" title="save">
+                                                            <color key="titleColor" name="Tint"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="saveButtonPressed:" destination="CRg-we-ThH" eventType="touchUpInside" id="A9k-H1-Y62"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="BackGround"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="Accent"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hn6-Ve-K6i" secondAttribute="bottom" constant="10" id="87h-IU-TJ0"/>
+                                    <constraint firstItem="hn6-Ve-K6i" firstAttribute="top" secondItem="6cH-aW-wQ0" secondAttribute="top" constant="10" id="CDq-tJ-wc7"/>
+                                    <constraint firstAttribute="height" constant="230" id="nCq-CZ-dUJ"/>
+                                    <constraint firstItem="hn6-Ve-K6i" firstAttribute="leading" secondItem="6cH-aW-wQ0" secondAttribute="leading" constant="10" id="sqp-uR-byS"/>
+                                    <constraint firstAttribute="trailing" secondItem="hn6-Ve-K6i" secondAttribute="trailing" constant="10" id="vzF-1i-fIO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40154109589041098" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6cH-aW-wQ0" firstAttribute="top" secondItem="zV4-cX-wK6" secondAttribute="top" constant="20" id="5EM-23-X7Z"/>
+                            <constraint firstItem="zV4-cX-wK6" firstAttribute="trailing" secondItem="6cH-aW-wQ0" secondAttribute="trailing" constant="5" id="Ysk-4x-uBg"/>
+                            <constraint firstItem="6cH-aW-wQ0" firstAttribute="leading" secondItem="zV4-cX-wK6" secondAttribute="leading" constant="5" id="xHo-0P-qKX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zV4-cX-wK6"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="wWb-zs-qZv" id="gIE-eg-rvK"/>
+                        <outlet property="saveButton" destination="y0V-xa-zgp" id="W2Z-3i-BO2"/>
+                        <outlet property="tripNameTextFiield" destination="kOe-xL-gwU" id="E0x-Le-Pcu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MKk-yO-d0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789.85507246376812" y="26.785714285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Accent">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BackGround">
+            <color red="0.035294117647058823" green="0.047058823529411764" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tint">
+            <color red="0.90633183717727661" green="0.9754679799079895" blue="0.79773777723312378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

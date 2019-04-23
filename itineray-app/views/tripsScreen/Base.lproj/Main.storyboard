@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Trips View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TripsViewController" customModule="itineray_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" estimatedRowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sMV-br-Mcv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.033341358322738525" green="0.046957452387051991" blue="0.074060120540101471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tripsCell" rowHeight="150" id="Fsn-A1-fGy" customClass="TripsCell" customModule="itineray_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fsn-A1-fGy" id="0cl-gp-Vwq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBQ-va-1oI">
+                                                    <rect key="frame" x="10" y="10" width="394" height="130"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fON-Rh-z2F">
+                                                            <rect key="frame" x="20" y="40" width="354" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="jM9-do-aos"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="32"/>
+                                                            <color key="textColor" red="0.83019036054611206" green="0.92398637533187866" blue="0.63127994537353516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="fON-Rh-z2F" firstAttribute="top" secondItem="xBQ-va-1oI" secondAttribute="top" constant="40" id="0tG-b5-O9C"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fON-Rh-z2F" secondAttribute="trailing" constant="20" id="jNB-qk-hqE"/>
+                                                        <constraint firstItem="fON-Rh-z2F" firstAttribute="leading" secondItem="xBQ-va-1oI" secondAttribute="leading" constant="20" id="ojO-lj-xvi"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xBQ-va-1oI" firstAttribute="leading" secondItem="0cl-gp-Vwq" secondAttribute="leading" constant="10" id="7nf-FU-jAX"/>
+                                                <constraint firstAttribute="trailing" secondItem="xBQ-va-1oI" secondAttribute="trailing" constant="10" id="Su8-a3-lrE"/>
+                                                <constraint firstItem="xBQ-va-1oI" firstAttribute="top" secondItem="0cl-gp-Vwq" secondAttribute="top" constant="10" id="Vb8-4C-gc8"/>
+                                                <constraint firstAttribute="bottom" secondItem="xBQ-va-1oI" secondAttribute="bottom" constant="10" id="b85-w6-N85"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.035294117647058823" green="0.047058823529411764" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="cardView" destination="xBQ-va-1oI" id="ERr-nu-I5E"/>
+                                            <outlet property="titleLabel" destination="fON-Rh-z2F" id="aZo-fd-VSO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGm-6p-tPg">
+                                <rect key="frame" x="333" y="781" width="65" height="65"/>
+                                <color key="backgroundColor" name="Accent"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="jcs-XV-4bG"/>
+                                    <constraint firstAttribute="width" constant="65" id="tQD-qE-e34"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="57"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" name="Tint"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BfF-A5-dbv" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="3dA-MB-4OJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sMV-br-Mcv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HBA-m9-AXk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sMV-br-Mcv" secondAttribute="bottom" id="RF7-oe-qz2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VGm-6p-tPg" secondAttribute="bottom" constant="16" id="UxJ-ST-L5Q"/>
+                            <constraint firstItem="sMV-br-Mcv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dEz-Dm-waC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VGm-6p-tPg" secondAttribute="trailing" constant="16" id="gWZ-rx-hdb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sMV-br-Mcv" secondAttribute="trailing" id="qgp-vO-Z9O"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="addTripButton" destination="VGm-6p-tPg" id="Ad0-F0-kMP"/>
+                        <outlet property="tableView" destination="sMV-br-Mcv" id="zan-3o-nwR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+        </scene>
+        <!--CreateTripVC-->
+        <scene sceneID="Wa2-wI-Vg7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateTripVC" id="BfF-A5-dbv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q4R-Qz-rtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="790" y="27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Accent">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tint">
+            <color red="0.90633183717727661" green="0.9754679799079895" blue="0.79773777723312378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
