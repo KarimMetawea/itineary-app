@@ -10,8 +10,11 @@ import UIKit
 extension UIButton {
     func roundAndMakeShadow(){
         layer.cornerRadius = self.frame.height / 2
-        layer.shadowOpacity = 0.25
-        layer.shadowOffset = CGSize.zero
-        layer.shadowColor = Theme.tintColor?.cgColor
+        layer.borderColor = Theme.tintColor?.cgColor
+        layer.borderWidth = 3
+//        layer.shadowOpacity = 0.50
+        
+//        layer.shadowOffset = CGSize(width: 0, height: 10)
+//        layer.shadowColor = Theme.accentColor?.cgColor
     }
 }

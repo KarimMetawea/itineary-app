@@ -23,6 +23,12 @@ class TripsViewController: UIViewController{
         }
     }
     //MARK: UITableViewDataSource
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? CreateTripViewController else {return}
+        vc.onSave = { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
    }
 extension TripsViewController:UITableViewDelegate,UITableViewDataSource {
     

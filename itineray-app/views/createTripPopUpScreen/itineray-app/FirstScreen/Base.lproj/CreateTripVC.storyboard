@@ -27,7 +27,6 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add a trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSh-io-64r">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="53.5"/>
-                                                <color key="backgroundColor" name="BackGround"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
                                                 <color key="textColor" name="Tint"/>
                                                 <nil key="highlightedColor"/>
@@ -44,10 +43,10 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWb-zs-qZv">
                                                         <rect key="frame" x="0.0" y="0.0" width="162" height="53.5"/>
-                                                        <color key="backgroundColor" name="BackGround"/>
-                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                                        <color key="backgroundColor" name="Tint"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                                         <state key="normal" title="cancel">
-                                                            <color key="titleColor" name="Tint"/>
+                                                            <color key="titleColor" name="BackGround"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="cancelButtonPressed:" destination="CRg-we-ThH" eventType="touchUpInside" id="DXA-Ob-cSG"/>
@@ -55,10 +54,10 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0V-xa-zgp">
                                                         <rect key="frame" x="222" y="0.0" width="162" height="53.5"/>
-                                                        <color key="backgroundColor" name="BackGround"/>
-                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                                        <color key="backgroundColor" name="Tint"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                                         <state key="normal" title="save">
-                                                            <color key="titleColor" name="Tint"/>
+                                                            <color key="titleColor" name="BackGround"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="saveButtonPressed:" destination="CRg-we-ThH" eventType="touchUpInside" id="A9k-H1-Y62"/>
@@ -67,13 +66,27 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="BackGround"/>
+                                        <color key="backgroundColor" red="0.58039215686274503" green="0.066666666666666666" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nW5-Nr-0a9">
+                                        <rect key="frame" x="352" y="18" width="40" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="ZYk-cy-9Im"/>
+                                            <constraint firstAttribute="height" constant="30" id="nfT-67-Ms2"/>
+                                        </constraints>
+                                        <color key="tintColor" name="Tint"/>
+                                        <state key="normal" image="photo-camera"/>
+                                        <connections>
+                                            <action selector="cameraButtonPressed:" destination="CRg-we-ThH" eventType="touchUpInside" id="Xjs-cl-dQJ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" name="Accent"/>
+                                <color key="backgroundColor" name="BackGround"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="hn6-Ve-K6i" secondAttribute="bottom" constant="10" id="87h-IU-TJ0"/>
+                                    <constraint firstAttribute="trailing" secondItem="nW5-Nr-0a9" secondAttribute="trailing" constant="12" id="9Er-eC-AbU"/>
                                     <constraint firstItem="hn6-Ve-K6i" firstAttribute="top" secondItem="6cH-aW-wQ0" secondAttribute="top" constant="10" id="CDq-tJ-wc7"/>
+                                    <constraint firstItem="nW5-Nr-0a9" firstAttribute="top" secondItem="6cH-aW-wQ0" secondAttribute="top" constant="18" id="bcD-M2-Dfn"/>
                                     <constraint firstAttribute="height" constant="230" id="nCq-CZ-dUJ"/>
                                     <constraint firstItem="hn6-Ve-K6i" firstAttribute="leading" secondItem="6cH-aW-wQ0" secondAttribute="leading" constant="10" id="sqp-uR-byS"/>
                                     <constraint firstAttribute="trailing" secondItem="hn6-Ve-K6i" secondAttribute="trailing" constant="10" id="vzF-1i-fIO"/>
@@ -81,6 +94,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40154109589041098" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" name="Tint"/>
                         <constraints>
                             <constraint firstItem="6cH-aW-wQ0" firstAttribute="top" secondItem="zV4-cX-wK6" secondAttribute="top" constant="20" id="5EM-23-X7Z"/>
                             <constraint firstItem="zV4-cX-wK6" firstAttribute="trailing" secondItem="6cH-aW-wQ0" secondAttribute="trailing" constant="5" id="Ysk-4x-uBg"/>
@@ -100,14 +114,13 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="Accent">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="photo-camera" width="409.60000610351562" height="409.60000610351562"/>
         <namedColor name="BackGround">
             <color red="0.035294117647058823" green="0.047058823529411764" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Tint">
-            <color red="0.90633183717727661" green="0.9754679799079895" blue="0.79773777723312378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <color key="tintColor" name="Tint"/>
 </document>
