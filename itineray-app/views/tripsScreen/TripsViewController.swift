@@ -12,13 +12,18 @@ class TripsViewController: UIViewController{
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addTripButton: UIButton!
-//    the index of the trip the user is trying to edit
+    @IBOutlet var helpView: UIVisualEffectView!
+    //    the index of the trip the user is trying to edit
     var editedIndex:Int?
+//    constants
+    let seenHelpView = "seenHelpView"
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
       tableView.delegate = self
       tableView.dataSource = self
         
@@ -26,9 +31,17 @@ class TripsViewController: UIViewController{
        addTripButton.roundAndMakeShadow()
         
 //        reading trips from TripFunctions class
-        TripFunctions.readTrips {[weak self] in
+        TripFunctions.readTrips {[unowned self] in
             
-         self?.tableView.reloadData()
+         self.tableView.reloadData()
+            if DataModel.trips.count > 0 {
+//                checking if the user seen the helpView and if there is cells to be seen
+                if UserDefaults.standard.bool(forKey: self.seenHelpView) == false {
+                    self.helpView.frame = self.view.frame
+                    self.view.addSubview(self.helpView)
+                }
+            }
+            
         }
     }
     
@@ -46,6 +59,10 @@ class TripsViewController: UIViewController{
         
 //    making the edited index equals nil in case the user creating a new trip
         editedIndex = nil
+    }
+    @IBAction func helpViewCancelButtonPressed(_ sender: Any) {
+        helpView.removeFromSuperview()
+        UserDefaults.standard.set(true, forKey: seenHelpView)
     }
 }
 

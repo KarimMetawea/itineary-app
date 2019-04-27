@@ -104,10 +104,69 @@
                     </view>
                     <connections>
                         <outlet property="addTripButton" destination="VGm-6p-tPg" id="Ad0-F0-kMP"/>
+                        <outlet property="helpView" destination="ZzA-bl-d63" id="BoD-lV-ZSO"/>
                         <outlet property="tableView" destination="sMV-br-Mcv" id="zan-3o-nwR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" id="ZzA-bl-d63">
+                    <rect key="frame" x="0.0" y="0.0" width="413" height="672"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1T5-As-Pkh">
+                        <rect key="frame" x="0.0" y="0.0" width="413" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editAction" translatesAutoresizingMaskIntoConstraints="NO" id="Jhe-oe-FDX">
+                                <rect key="frame" x="8" y="281" width="209" height="121"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="ZMi-9s-LjV"/>
+                                    <constraint firstAttribute="height" constant="121" id="cHx-vA-Rda"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe for more features" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVU-Xk-Jed">
+                                <rect key="frame" x="40" y="60" width="333" height="40"/>
+                                <color key="tintColor" name="Tint"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KRo-61-uyd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" name="Tint"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69R-iq-ezr">
+                                <rect key="frame" x="60" y="442" width="293" height="39"/>
+                                <color key="backgroundColor" name="Tint"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="cancel">
+                                    <color key="titleColor" name="BackGround"/>
+                                </state>
+                                <connections>
+                                    <action selector="helpViewCancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mvi-l0-Bh7"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deleteAction" translatesAutoresizingMaskIntoConstraints="NO" id="cc5-VO-AXR">
+                                <rect key="frame" x="152" y="130" width="253" height="121"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="253" id="7Za-Az-YEx"/>
+                                    <constraint firstAttribute="height" constant="121" id="XFM-si-Ynh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Jhe-oe-FDX" firstAttribute="leading" secondItem="1T5-As-Pkh" secondAttribute="leading" constant="8" id="AKU-qA-3ZY"/>
+                            <constraint firstItem="69R-iq-ezr" firstAttribute="centerX" secondItem="1T5-As-Pkh" secondAttribute="centerX" id="Hd5-TS-2dR"/>
+                            <constraint firstItem="GVU-Xk-Jed" firstAttribute="centerX" secondItem="1T5-As-Pkh" secondAttribute="centerX" id="Mb8-4u-SbF"/>
+                            <constraint firstAttribute="trailing" secondItem="GVU-Xk-Jed" secondAttribute="trailing" constant="40" id="NgV-Vv-JeC"/>
+                            <constraint firstAttribute="trailing" secondItem="69R-iq-ezr" secondAttribute="trailing" constant="60" id="Op4-yp-jaP"/>
+                            <constraint firstItem="Jhe-oe-FDX" firstAttribute="top" secondItem="cc5-VO-AXR" secondAttribute="bottom" constant="30" id="bkR-9U-Tai"/>
+                            <constraint firstItem="69R-iq-ezr" firstAttribute="top" secondItem="Jhe-oe-FDX" secondAttribute="bottom" constant="40" id="hKt-S4-eCe"/>
+                            <constraint firstItem="cc5-VO-AXR" firstAttribute="top" secondItem="GVU-Xk-Jed" secondAttribute="bottom" constant="30" id="kW0-hM-Iim"/>
+                            <constraint firstAttribute="trailing" secondItem="cc5-VO-AXR" secondAttribute="trailing" constant="8" id="tiQ-UR-7kH"/>
+                            <constraint firstItem="GVU-Xk-Jed" firstAttribute="top" secondItem="1T5-As-Pkh" secondAttribute="top" constant="60" id="xHE-ys-3GF"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
             </objects>
             <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
@@ -121,6 +180,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="deleteAction" width="252" height="121"/>
+        <image name="editAction" width="211" height="121"/>
         <namedColor name="BackGround">
             <color red="0.078431372549019607" green="0.094117647058823528" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
