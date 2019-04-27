@@ -21,7 +21,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" estimatedRowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sMV-br-Mcv">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" red="0.033341358322738525" green="0.046957452387051991" blue="0.074060120540101471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="BackGround"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="tripsCell" rowHeight="150" id="Fsn-A1-fGy" customClass="TripsCell" customModule="itineray_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="150"/>
@@ -87,7 +87,7 @@
                                     <color key="titleColor" name="Tint"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BfF-A5-dbv" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="3dA-MB-4OJ"/>
+                                    <segue destination="BfF-A5-dbv" kind="presentation" identifier="createtripsegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="3dA-MB-4OJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -122,10 +122,11 @@
     </scenes>
     <resources>
         <namedColor name="BackGround">
-            <color red="0.035294117647058823" green="0.047058823529411764" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.078431372549019607" green="0.094117647058823528" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Tint">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <color key="tintColor" name="Tint"/>
 </document>

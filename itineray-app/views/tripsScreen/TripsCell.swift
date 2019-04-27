@@ -23,7 +23,15 @@ class TripsCell: UITableViewCell {
     
     func configureCell(trip:TripModel){
         self.titleLabel.text = trip.title
-        self.cellBackGroundImage.image = trip.image
+//        animating the image when appearing 
+        if let tripImage = trip.image{
+        cellBackGroundImage.alpha = 0.3
+        self.cellBackGroundImage.image = tripImage
+            UIView.animate(withDuration: 1) {
+                self.cellBackGroundImage.alpha = 1
+            }
+        }
+        
     }
     
 

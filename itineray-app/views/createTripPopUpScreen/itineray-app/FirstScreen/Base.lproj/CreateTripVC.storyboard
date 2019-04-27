@@ -25,7 +25,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="hn6-Ve-K6i">
                                         <rect key="frame" x="10" y="10" width="384" height="210"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add a trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSh-io-64r">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSh-io-64r">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="53.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
                                                 <color key="textColor" name="Tint"/>
@@ -105,6 +105,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="wWb-zs-qZv" id="gIE-eg-rvK"/>
                         <outlet property="saveButton" destination="y0V-xa-zgp" id="W2Z-3i-BO2"/>
+                        <outlet property="tripLabel" destination="MSh-io-64r" id="bEe-5C-jqh"/>
                         <outlet property="tripNameTextFiield" destination="kOe-xL-gwU" id="E0x-Le-Pcu"/>
                     </connections>
                 </viewController>
@@ -116,7 +117,7 @@
     <resources>
         <image name="photo-camera" width="409.60000610351562" height="409.60000610351562"/>
         <namedColor name="BackGround">
-            <color red="0.035294117647058823" green="0.047058823529411764" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.078431372549019607" green="0.094117647058823528" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Tint">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
