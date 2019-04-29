@@ -17,9 +17,7 @@ class TripFunctions {
         
         DispatchQueue.global(qos: .userInteractive).async {
             if DataModel.trips.count == 0 {
-                DataModel.trips.append(TripModel(title: "bali vacation"))
-                DataModel.trips.append(TripModel(title: "greece trip"))
-                DataModel.trips.append(TripModel(title: "canada immigration"))
+                DataModel.trips = MockData.createMockTripModelData()
             }
             DispatchQueue.main.async {
                 completion()

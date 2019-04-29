@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="meF-0U-38d">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TripsViewController" customModule="itineray_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" estimatedRowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sMV-br-Mcv">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" name="BackGround"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="tripsCell" rowHeight="150" id="Fsn-A1-fGy" customClass="TripsCell" customModule="itineray_app" customModuleProvider="target">
@@ -76,7 +76,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGm-6p-tPg">
-                                <rect key="frame" x="333" y="781" width="65" height="65"/>
+                                <rect key="frame" x="333" y="713" width="65" height="65"/>
                                 <color key="backgroundColor" name="BackGround"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="jcs-XV-4bG"/>
@@ -94,14 +94,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sMV-br-Mcv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HBA-m9-AXk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sMV-br-Mcv" secondAttribute="bottom" id="RF7-oe-qz2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VGm-6p-tPg" secondAttribute="bottom" constant="16" id="UxJ-ST-L5Q"/>
+                            <constraint firstAttribute="bottom" secondItem="sMV-br-Mcv" secondAttribute="bottom" id="RF7-oe-qz2"/>
+                            <constraint firstAttribute="bottom" secondItem="VGm-6p-tPg" secondAttribute="bottom" constant="30" id="UxJ-ST-L5Q"/>
                             <constraint firstItem="sMV-br-Mcv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dEz-Dm-waC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VGm-6p-tPg" secondAttribute="trailing" constant="16" id="gWZ-rx-hdb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sMV-br-Mcv" secondAttribute="trailing" id="qgp-vO-Z9O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="tK6-qQ-YIE"/>
                     <connections>
                         <outlet property="addTripButton" destination="VGm-6p-tPg" id="Ad0-F0-kMP"/>
                         <outlet property="helpView" destination="ZzA-bl-d63" id="BoD-lV-ZSO"/>
@@ -168,7 +169,22 @@
                     <blurEffect style="dark"/>
                 </visualEffectView>
             </objects>
-            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+            <point key="canvasLocation" x="962.31884057971024" y="26.785714285714285"/>
+        </scene>
+        <!--Activities View Controller-->
+        <scene sceneID="neh-fY-z1x">
+            <objects>
+                <viewController storyboardIdentifier="activitiesViewController" id="n9w-SX-3kT" customClass="ActivitiesViewController" customModule="itineray_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vvj-e8-M5L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6Wq-rK-PuO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6fN-od-qvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1732" y="27"/>
         </scene>
         <!--CreateTripVC-->
         <scene sceneID="Wa2-wI-Vg7">
@@ -176,12 +192,35 @@
                 <viewControllerPlaceholder storyboardName="CreateTripVC" id="BfF-A5-dbv" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4R-Qz-rtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="790" y="27"/>
+            <point key="canvasLocation" x="272" y="477"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DN3-15-OdH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="meF-0U-38d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="bm7-3R-6UL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="BackGround"/>
+                        <color key="barTintColor" name="Accent"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="89M-GE-Q5e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3yI-yt-pAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="26.785714285714285"/>
         </scene>
     </scenes>
     <resources>
         <image name="deleteAction" width="252" height="121"/>
         <image name="editAction" width="211" height="121"/>
+        <namedColor name="Accent">
+            <color red="0.47450980392156861" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="BackGround">
             <color red="0.078431372549019607" green="0.094117647058823528" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -77,6 +77,7 @@ class CreateTripViewController: UIViewController {
 //    creating a UIImagePicker controller
     fileprivate func presentPickerController() {
         let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         self.present(imagePicker,animated: true)
@@ -120,12 +121,18 @@ class CreateTripViewController: UIViewController {
 }
 
 extension CreateTripViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
+    
 //    delegate methods for choosing an image from library
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
 //        assigning the choosen image from photo library to image variable of the trip
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        if let image = info[.editedImage] as? UIImage {
             self.image = image
         }
+//        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+//            self.image = image
+//        }
         
         dismiss(animated: true, completion: nil)
     }
