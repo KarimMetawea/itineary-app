@@ -16,6 +16,8 @@
 		D917E3A8226BE86200BF098F /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917E3A7226BE86200BF098F /* UIButtonExtension.swift */; };
 		D9C7805C227526AA007291D0 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7805B227526AA007291D0 /* ActivitiesViewController.swift */; };
 		D9C7806122752966007291D0 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7806022752966007291D0 /* DayModel.swift */; };
+		D9CF060F2279E9300040C79E /* HeaderDaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF060E2279E9300040C79E /* HeaderDaysCell.swift */; };
+		D9CF06112279F1E40040C79E /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF06102279F1E40040C79E /* ActivityCell.swift */; };
 		D9D179E32262BB9B002942DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D179E22262BB9B002942DD /* AppDelegate.swift */; };
 		D9D179E52262BB9B002942DD /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D179E42262BB9B002942DD /* TripsViewController.swift */; };
 		D9D179E82262BB9B002942DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D179E62262BB9B002942DD /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		D917E3A7226BE86200BF098F /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		D9C7805B227526AA007291D0 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		D9C7806022752966007291D0 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
+		D9CF060E2279E9300040C79E /* HeaderDaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDaysCell.swift; sourceTree = "<group>"; };
+		D9CF06102279F1E40040C79E /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		D9D179DF2262BB9B002942DD /* itineray-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "itineray-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D179E22262BB9B002942DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9D179E42262BB9B002942DD /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				D9C7805B227526AA007291D0 /* ActivitiesViewController.swift */,
+				D9CF060E2279E9300040C79E /* HeaderDaysCell.swift */,
+				D9CF06102279F1E40040C79E /* ActivityCell.swift */,
 			);
 			path = tripDaysAndActivitiesScreen;
 			sourceTree = "<group>";
@@ -285,9 +291,11 @@
 				D9C7805C227526AA007291D0 /* ActivitiesViewController.swift in Sources */,
 				D9D179FC2262C087002942DD /* DataModel.swift in Sources */,
 				D9D179E32262BB9B002942DD /* AppDelegate.swift in Sources */,
+				D9CF06112279F1E40040C79E /* ActivityCell.swift in Sources */,
 				D9D179FA2262BD25002942DD /* TripFunctions.swift in Sources */,
 				D917E39F226B6C1A00BF098F /* UIViewExtension.swift in Sources */,
 				D917E3A8226BE86200BF098F /* UIButtonExtension.swift in Sources */,
+				D9CF060F2279E9300040C79E /* HeaderDaysCell.swift in Sources */,
 				D917E3A2226B78FB00BF098F /* Theme.swift in Sources */,
 				D9E3360E2265274700112F6B /* TripsCell.swift in Sources */,
 				D9C7806122752966007291D0 /* DayModel.swift in Sources */,

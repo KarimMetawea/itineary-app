@@ -25,6 +25,21 @@ class TripFunctions {
         }
         
     }
+    
+    static func readTripsById(id:UUID,completion:@escaping (TripModel?)->()){
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            let trip = DataModel.trips.first(where: { (model) -> Bool in
+                model.id == id
+            })
+            DispatchQueue.main.async {
+                completion(trip)
+            }
+        }
+        
+    }
+    
+    
     static func updateTrip(index:Int,name:String,image:UIImage?){
         DataModel.trips[index].title = name
         DataModel.trips[index].image = image

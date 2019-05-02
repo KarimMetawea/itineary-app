@@ -9,6 +9,8 @@
 import UIKit
 class Theme {
     static let mainFontName = "Avenir-Medium"
+    static let bodyFontBold = "Avenir-Heavy"
+    static let bodyFontLight = "Avenir-Light"
     static let accentColor = UIColor(named: "Accent")
     static let backGroundColor = UIColor(named: "BackGround")
     static let tintColor = UIColor(named: "Tint")
