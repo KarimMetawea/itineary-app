@@ -36,7 +36,7 @@
                                                 <color key="backgroundColor" red="0.1410615003" green="0.1967614674" blue="0.31037833120000002" alpha="0.61114083904109584" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" name="Tint"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="OvM-Uc-fEz">
                                                 <rect key="frame" x="0.0" y="156.5" width="384" height="53.5"/>

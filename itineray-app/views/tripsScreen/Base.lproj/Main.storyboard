@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Trips View Controller-->
+        <!--Trips-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TripsViewController" customModule="itineray_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,7 +78,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGm-6p-tPg">
                                 <rect key="frame" x="333" y="713" width="65" height="65"/>
-                                <color key="backgroundColor" name="BackGround"/>
+                                <color key="backgroundColor" name="Accent"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="jcs-XV-4bG"/>
                                     <constraint firstAttribute="width" constant="65" id="tQD-qE-e34"/>
@@ -103,7 +103,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tK6-qQ-YIE"/>
+                    <navigationItem key="navigationItem" title="Trips" id="tK6-qQ-YIE"/>
                     <connections>
                         <outlet property="addTripButton" destination="VGm-6p-tPg" id="Ad0-F0-kMP"/>
                         <outlet property="helpView" destination="ZzA-bl-d63" id="BoD-lV-ZSO"/>
@@ -187,6 +187,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bSk-ta-2lS">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="KQc-H8-Nen">
+                                    <rect key="frame" x="0.0" y="172" width="414" height="70"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HeaderDaysCell" id="63H-yW-MZc" customClass="HeaderDaysCell" customModule="itineray_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -294,17 +299,35 @@
                                     <outlet property="delegate" destination="n9w-SX-3kT" id="BZO-pb-wQf"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbK-cK-0FJ">
+                                <rect key="frame" x="333" y="801" width="65" height="65"/>
+                                <color key="backgroundColor" name="Accent"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="43w-rR-5YV"/>
+                                    <constraint firstAttribute="height" constant="65" id="fv8-9Z-bsO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="57"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" name="Tint"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="n9w-SX-3kT" eventType="touchUpInside" id="i8l-eO-6mE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="BackGround"/>
                         <constraints>
                             <constraint firstItem="bSk-ta-2lS" firstAttribute="trailing" secondItem="6Wq-rK-PuO" secondAttribute="trailing" id="I7I-yJ-fdy"/>
                             <constraint firstItem="bSk-ta-2lS" firstAttribute="leading" secondItem="6Wq-rK-PuO" secondAttribute="leading" id="RoF-15-Cfo"/>
                             <constraint firstItem="bSk-ta-2lS" firstAttribute="top" secondItem="6Wq-rK-PuO" secondAttribute="top" id="eWC-2W-mYZ"/>
+                            <constraint firstItem="6Wq-rK-PuO" firstAttribute="trailing" secondItem="XbK-cK-0FJ" secondAttribute="trailing" constant="16" id="ngY-wl-pFC"/>
+                            <constraint firstAttribute="bottom" secondItem="XbK-cK-0FJ" secondAttribute="bottom" constant="30" id="oah-UZ-Ut1"/>
                             <constraint firstAttribute="bottom" secondItem="bSk-ta-2lS" secondAttribute="bottom" id="uJu-Bs-sFG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Wq-rK-PuO"/>
                     </view>
                     <connections>
+                        <outlet property="addDaysButton" destination="XbK-cK-0FJ" id="Pwi-OW-Fqa"/>
                         <outlet property="backGroundImage" destination="Nme-5e-lln" id="f9I-TQ-ZKZ"/>
                         <outlet property="tableView" destination="bSk-ta-2lS" id="m97-ST-7Px"/>
                     </connections>
@@ -326,14 +349,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="meF-0U-38d" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="bm7-3R-6UL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="bm7-3R-6UL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="BackGround"/>
                         <color key="tintColor" name="BackGround"/>
                         <color key="barTintColor" name="Accent"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="BackGround"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -351,9 +374,6 @@
         <image name="editAction" width="211" height="121"/>
         <namedColor name="Accent">
             <color red="0.47450980392156861" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="BackGround">
-            <color red="0.078431372549019607" green="0.094117647058823528" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackGround">
             <color red="0.078431372549019607" green="0.094117647058823528" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

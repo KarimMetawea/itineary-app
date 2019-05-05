@@ -14,20 +14,18 @@ class ActivitiesViewController: UIViewController {
     var trip:TripModel?
     var headerCellHeight:CGFloat = 0.0
     var ativityCellHeight:CGFloat = 0.0
+    var tripTitle = ""
+    @IBOutlet weak var addDaysButton: UIButton!
     @IBOutlet weak var backGroundImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        TripFunctions.readTripsById(id: tripId) { [weak self] (trip) in
-            guard let self = self else {return}
-            self.trip = trip
-            
-            guard let trip = trip else {return}
-            self.title = trip.title
-            self.backGroundImage.image = trip.image
-            self.tableView.reloadData()
-        }
+          self.title = self.tripTitle
+        addDaysButton.roundAndMakeShadow()
+        loadTripData()
         
         let height = tableView.dequeueReusableCell(withIdentifier: "HeaderDaysCell")?.contentView.bounds.height ?? 0
         headerCellHeight = height
@@ -36,6 +34,69 @@ class ActivitiesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func addButtonPressed(_ sender: AnyObject) {
+        
+//        pops up an actionsheet to chose wether to add a day or activity
+        let ac = UIAlertController(title: "add to your Trip", message: "what would you like to add", preferredStyle: .actionSheet)
+        let dayAction = UIAlertAction(title: "Add Day", style: .default , handler: handleAddDay)
+        
+        
+        let activityAction = UIAlertAction(title: "Add Activity", style: .default , handler:handleAddActivity)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler:handleCancelAction)
+        ac.addAction(dayAction)
+        ac.addAction(activityAction)
+        ac.addAction(cancelAction)
+        
+        ac.view.tintColor = Theme.backGroundColor
+        self.present(ac,animated: true)
+    }
+    
+    
+    
+    func handleAddDay(action:UIAlertAction) {
+        let storyboard = UIStoryboard(name: String(describing: AddDayViewController.self), bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()! as! AddDayViewController
+        vc.tripIndex = DataModel.trips.firstIndex(where: { $0.id == tripId
+        })
+        vc.onSave = {[weak self] dayModel in
+            guard let strongSelf = self else { return }
+//            it needs to be called before appending daymodel to ensure trip.count matchs
+           strongSelf.trip?.days.append(dayModel)
+            
+            if let index = strongSelf.trip?.days.count  {
+                let indexArray = [index - 1 ]
+                strongSelf.tableView.insertSections(IndexSet(indexArray) , with: .automatic)
+            } else {
+                let indexArray = [0]
+                strongSelf.tableView.insertSections(IndexSet(indexArray) , with: .automatic)
+            }
+            
+        }
+        
+        present(vc,animated: true)
+    }
+    
+    func handleAddActivity(action:UIAlertAction) {
+        
+    }
+    
+    func handleCancelAction(action:UIAlertAction) {
+        
+    }
+    
+    
+    
+    fileprivate func loadTripData() {
+        TripFunctions.readTripsById(id: tripId) { [weak self] (trip) in
+            guard let self = self else {return}
+            self.trip = trip
+            
+            guard let trip = trip else {return}
+            self.backGroundImage.image = trip.image
+            self.tableView.reloadData()
+        }
+    }
     
    
     
@@ -48,18 +109,21 @@ extension ActivitiesViewController:UITableViewDelegate,UITableViewDataSource{
         guard let trip = trip else {return 0}
         return trip.days.count
     }
+    
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        guard let dayModel = trip?.days[section] else {return UIView()}
         //        customizing the table view header using HeaderDaysCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderDaysCell") as! HeaderDaysCell
+        
+         guard let dayModel = trip?.days[section] else {return cell.contentView}
+        
         cell.configureCell(dayModel: dayModel)
         return cell.contentView
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderDaysCell")
         
-        return cell?.contentView.bounds.height ?? 0
+        return headerCellHeight
     }
     //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     //        return trip?.days[section].title

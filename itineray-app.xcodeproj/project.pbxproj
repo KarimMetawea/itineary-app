@@ -14,6 +14,10 @@
 		D917E3A2226B78FB00BF098F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917E3A1226B78FB00BF098F /* Theme.swift */; };
 		D917E3A6226B7FC600BF098F /* colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D917E3A5226B7FC600BF098F /* colors.xcassets */; };
 		D917E3A8226BE86200BF098F /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917E3A7226BE86200BF098F /* UIButtonExtension.swift */; };
+		D96C9A93227EF8890077FE28 /* AddDayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96C9A92227EF8890077FE28 /* AddDayViewController.storyboard */; };
+		D96C9A95227EF8AD0077FE28 /* AddDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C9A94227EF8AD0077FE28 /* AddDayViewController.swift */; };
+		D96C9A97227F07BC0077FE28 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C9A96227F07BC0077FE28 /* UITextFieldExtension.swift */; };
+		D96C9A99227F0B120077FE28 /* DayFuctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C9A98227F0B120077FE28 /* DayFuctions.swift */; };
 		D9C7805C227526AA007291D0 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7805B227526AA007291D0 /* ActivitiesViewController.swift */; };
 		D9C7806122752966007291D0 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7806022752966007291D0 /* DayModel.swift */; };
 		D9CF060F2279E9300040C79E /* HeaderDaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF060E2279E9300040C79E /* HeaderDaysCell.swift */; };
@@ -40,6 +44,10 @@
 		D917E3A1226B78FB00BF098F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D917E3A5226B7FC600BF098F /* colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = colors.xcassets; sourceTree = "<group>"; };
 		D917E3A7226BE86200BF098F /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		D96C9A92227EF8890077FE28 /* AddDayViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddDayViewController.storyboard; sourceTree = "<group>"; };
+		D96C9A94227EF8AD0077FE28 /* AddDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayViewController.swift; sourceTree = "<group>"; };
+		D96C9A96227F07BC0077FE28 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		D96C9A98227F0B120077FE28 /* DayFuctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFuctions.swift; sourceTree = "<group>"; };
 		D9C7805B227526AA007291D0 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		D9C7806022752966007291D0 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
 		D9CF060E2279E9300040C79E /* HeaderDaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDaysCell.swift; sourceTree = "<group>"; };
@@ -83,6 +91,7 @@
 		D9117740226E96F700DA1FB5 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				D96C9A91227EF8660077FE28 /* AddDayScreen */,
 				D9C7805822752287007291D0 /* tripDaysAndActivitiesScreen */,
 				D9D179F52262BC96002942DD /* tripsScreen */,
 				D911773A226E95BE00DA1FB5 /* createTripPopUpScreen */,
@@ -103,6 +112,7 @@
 			children = (
 				D917E39E226B6C1A00BF098F /* UIViewExtension.swift */,
 				D917E3A7226BE86200BF098F /* UIButtonExtension.swift */,
+				D96C9A96227F07BC0077FE28 /* UITextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -116,6 +126,15 @@
 				D917E3A5226B7FC600BF098F /* colors.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D96C9A91227EF8660077FE28 /* AddDayScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D96C9A92227EF8890077FE28 /* AddDayViewController.storyboard */,
+				D96C9A94227EF8AD0077FE28 /* AddDayViewController.swift */,
+			);
+			path = AddDayScreen;
 			sourceTree = "<group>";
 		};
 		D9C7805822752287007291D0 /* tripDaysAndActivitiesScreen */ = {
@@ -132,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				D9C7806022752966007291D0 /* DayModel.swift */,
+				D96C9A98227F0B120077FE28 /* DayFuctions.swift */,
 			);
 			path = Day;
 			sourceTree = "<group>";
@@ -272,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96C9A93227EF8890077FE28 /* AddDayViewController.storyboard in Resources */,
 				D9D179ED2262BB9D002942DD /* LaunchScreen.storyboard in Resources */,
 				D917E3A6226B7FC600BF098F /* colors.xcassets in Resources */,
 				D9D179EA2262BB9D002942DD /* Assets.xcassets in Resources */,
@@ -292,6 +313,7 @@
 				D9D179FC2262C087002942DD /* DataModel.swift in Sources */,
 				D9D179E32262BB9B002942DD /* AppDelegate.swift in Sources */,
 				D9CF06112279F1E40040C79E /* ActivityCell.swift in Sources */,
+				D96C9A97227F07BC0077FE28 /* UITextFieldExtension.swift in Sources */,
 				D9D179FA2262BD25002942DD /* TripFunctions.swift in Sources */,
 				D917E39F226B6C1A00BF098F /* UIViewExtension.swift in Sources */,
 				D917E3A8226BE86200BF098F /* UIButtonExtension.swift in Sources */,
@@ -303,8 +325,10 @@
 				D9D179F82262BD0F002942DD /* TripModel.swift in Sources */,
 				D911773F226E96A800DA1FB5 /* CreateTripViewController.swift in Sources */,
 				D9DA1BB52277BB8F0074F504 /* MockData.swift in Sources */,
+				D96C9A99227F0B120077FE28 /* DayFuctions.swift in Sources */,
 				D9DA1BB12277B7480074F504 /* ActivityModel.swift in Sources */,
 				D9117743226EA69200DA1FB5 /* PopOverView.swift in Sources */,
+				D96C9A95227EF8AD0077FE28 /* AddDayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

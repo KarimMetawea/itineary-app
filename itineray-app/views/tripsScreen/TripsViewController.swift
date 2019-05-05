@@ -37,7 +37,7 @@ class TripsViewController: UIViewController{
             if DataModel.trips.count > 0 {
 //                checking if the user seen the helpView and if there is cells to be seen
                 if UserDefaults.standard.bool(forKey: self.seenHelpView) == false {
-                    self.helpView.frame = self.view.frame
+                    self.helpView.frame = self.view.bounds
                     self.view.addSubview(self.helpView)
                 }
             }
@@ -129,6 +129,7 @@ extension TripsViewController:UITableViewDelegate,UITableViewDataSource {
 //        navigating to activities viewController
         let vc = storyboard?.instantiateViewController(withIdentifier: "activitiesViewController") as! ActivitiesViewController
         vc.tripId = trip.id
+        vc.tripTitle = trip.title
         
         navigationController?.pushViewController(vc, animated: true)
         
