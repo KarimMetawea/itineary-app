@@ -18,6 +18,9 @@
 		D96C9A95227EF8AD0077FE28 /* AddDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C9A94227EF8AD0077FE28 /* AddDayViewController.swift */; };
 		D96C9A97227F07BC0077FE28 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C9A96227F07BC0077FE28 /* UITextFieldExtension.swift */; };
 		D96C9A99227F0B120077FE28 /* DayFuctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C9A98227F0B120077FE28 /* DayFuctions.swift */; };
+		D96C9A9B227F89740077FE28 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C9A9A227F89740077FE28 /* DateExtension.swift */; };
+		D96C9A9E227FAA880077FE28 /* AddActivityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96C9A9D227FAA880077FE28 /* AddActivityViewController.storyboard */; };
+		D96C9AA0227FAAC80077FE28 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C9A9F227FAAC80077FE28 /* AddActivityViewController.swift */; };
 		D9C7805C227526AA007291D0 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7805B227526AA007291D0 /* ActivitiesViewController.swift */; };
 		D9C7806122752966007291D0 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7806022752966007291D0 /* DayModel.swift */; };
 		D9CF060F2279E9300040C79E /* HeaderDaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF060E2279E9300040C79E /* HeaderDaysCell.swift */; };
@@ -48,6 +51,9 @@
 		D96C9A94227EF8AD0077FE28 /* AddDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayViewController.swift; sourceTree = "<group>"; };
 		D96C9A96227F07BC0077FE28 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		D96C9A98227F0B120077FE28 /* DayFuctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFuctions.swift; sourceTree = "<group>"; };
+		D96C9A9A227F89740077FE28 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		D96C9A9D227FAA880077FE28 /* AddActivityViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddActivityViewController.storyboard; sourceTree = "<group>"; };
+		D96C9A9F227FAAC80077FE28 /* AddActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
 		D9C7805B227526AA007291D0 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		D9C7806022752966007291D0 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
 		D9CF060E2279E9300040C79E /* HeaderDaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDaysCell.swift; sourceTree = "<group>"; };
@@ -79,22 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D911773A226E95BE00DA1FB5 /* createTripPopUpScreen */ = {
+		D911773A226E95BE00DA1FB5 /* addTripPopUpScreen */ = {
 			isa = PBXGroup;
 			children = (
 				D911773B226E964700DA1FB5 /* CreateTripVC.storyboard */,
 				D911773E226E96A800DA1FB5 /* CreateTripViewController.swift */,
 			);
-			path = createTripPopUpScreen;
+			path = addTripPopUpScreen;
 			sourceTree = "<group>";
 		};
 		D9117740226E96F700DA1FB5 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				D96C9A9C227FAA6A0077FE28 /* addActivityScreen */,
 				D96C9A91227EF8660077FE28 /* AddDayScreen */,
 				D9C7805822752287007291D0 /* tripDaysAndActivitiesScreen */,
 				D9D179F52262BC96002942DD /* tripsScreen */,
-				D911773A226E95BE00DA1FB5 /* createTripPopUpScreen */,
+				D911773A226E95BE00DA1FB5 /* addTripPopUpScreen */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -113,6 +120,7 @@
 				D917E39E226B6C1A00BF098F /* UIViewExtension.swift */,
 				D917E3A7226BE86200BF098F /* UIButtonExtension.swift */,
 				D96C9A96227F07BC0077FE28 /* UITextFieldExtension.swift */,
+				D96C9A9A227F89740077FE28 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,6 +143,15 @@
 				D96C9A94227EF8AD0077FE28 /* AddDayViewController.swift */,
 			);
 			path = AddDayScreen;
+			sourceTree = "<group>";
+		};
+		D96C9A9C227FAA6A0077FE28 /* addActivityScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D96C9A9D227FAA880077FE28 /* AddActivityViewController.storyboard */,
+				D96C9A9F227FAAC80077FE28 /* AddActivityViewController.swift */,
+			);
+			path = addActivityScreen;
 			sourceTree = "<group>";
 		};
 		D9C7805822752287007291D0 /* tripDaysAndActivitiesScreen */ = {
@@ -297,6 +314,7 @@
 				D917E3A6226B7FC600BF098F /* colors.xcassets in Resources */,
 				D9D179EA2262BB9D002942DD /* Assets.xcassets in Resources */,
 				D9D179E82262BB9B002942DD /* Main.storyboard in Resources */,
+				D96C9A9E227FAA880077FE28 /* AddActivityViewController.storyboard in Resources */,
 				D911773D226E964700DA1FB5 /* CreateTripVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +332,7 @@
 				D9D179E32262BB9B002942DD /* AppDelegate.swift in Sources */,
 				D9CF06112279F1E40040C79E /* ActivityCell.swift in Sources */,
 				D96C9A97227F07BC0077FE28 /* UITextFieldExtension.swift in Sources */,
+				D96C9AA0227FAAC80077FE28 /* AddActivityViewController.swift in Sources */,
 				D9D179FA2262BD25002942DD /* TripFunctions.swift in Sources */,
 				D917E39F226B6C1A00BF098F /* UIViewExtension.swift in Sources */,
 				D917E3A8226BE86200BF098F /* UIButtonExtension.swift in Sources */,
@@ -323,6 +342,7 @@
 				D9C7806122752966007291D0 /* DayModel.swift in Sources */,
 				D9DA1BB32277B92E0074F504 /* ActivityTypeEnum.swift in Sources */,
 				D9D179F82262BD0F002942DD /* TripModel.swift in Sources */,
+				D96C9A9B227F89740077FE28 /* DateExtension.swift in Sources */,
 				D911773F226E96A800DA1FB5 /* CreateTripViewController.swift in Sources */,
 				D9DA1BB52277BB8F0074F504 /* MockData.swift in Sources */,
 				D96C9A99227F0B120077FE28 /* DayFuctions.swift in Sources */,

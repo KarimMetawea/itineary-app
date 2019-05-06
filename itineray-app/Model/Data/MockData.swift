@@ -23,10 +23,10 @@ class MockData {
     
     static func createMockDayModelData() -> [DayModel]{
         var days = [DayModel]()
-        days.append(DayModel(title: "May 20", subTitle: "first Day", activities: createMockActivityModelData()))
-        days.append(DayModel(title: "May 21", subTitle: "exploring Day", activities: createMockActivityModelData()))
+        days.append(DayModel(title: Date().addDay(numberOfDays: 1), subTitle: "first Day", activities: createMockActivityModelData()))
+        days.append(DayModel(title: Date().addDay(numberOfDays: 2), subTitle: "exploring Day", activities: createMockActivityModelData()))
         
-        days.append(DayModel(title: "May 22", subTitle: "safari day", activities: createMockActivityModelData()))
+        days.append(DayModel(title: Date().addDay(numberOfDays: 3), subTitle: "safari day", activities: createMockActivityModelData()))
         
         return days
     }

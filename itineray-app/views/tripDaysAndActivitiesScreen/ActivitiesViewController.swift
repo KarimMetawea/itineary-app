@@ -44,6 +44,10 @@ class ActivitiesViewController: UIViewController {
         let activityAction = UIAlertAction(title: "Add Activity", style: .default , handler:handleAddActivity)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler:handleCancelAction)
+        
+        if trip?.days.count == 0 {
+            activityAction.isEnabled = false
+        }
         ac.addAction(dayAction)
         ac.addAction(activityAction)
         ac.addAction(cancelAction)
@@ -59,27 +63,34 @@ class ActivitiesViewController: UIViewController {
         let vc = storyboard.instantiateInitialViewController()! as! AddDayViewController
         vc.tripIndex = DataModel.trips.firstIndex(where: { $0.id == tripId
         })
+        vc.tripModel = trip
+        
         vc.onSave = {[weak self] dayModel in
             guard let strongSelf = self else { return }
 //            it needs to be called before appending daymodel to ensure trip.count matchs
            strongSelf.trip?.days.append(dayModel)
             
-            if let index = strongSelf.trip?.days.count  {
-                let indexArray = [index - 1 ]
-                strongSelf.tableView.insertSections(IndexSet(indexArray) , with: .automatic)
-            } else {
-                let indexArray = [0]
-                strongSelf.tableView.insertSections(IndexSet(indexArray) , with: .automatic)
-            }
+            let index = strongSelf.trip?.days.firstIndex(where: { (model) -> Bool in
+                model.title == dayModel.title
+            })
+                strongSelf.tableView.insertSections(IndexSet([index ?? 0]) , with: .automatic)
+
             
         }
         
         present(vc,animated: true)
     }
     
+    
     func handleAddActivity(action:UIAlertAction) {
+        let storyboard = UIStoryboard(name: String(describing: AddActivityViewController.self), bundle: nil)
+        let vc = storyboard.instantiateInitialViewController() as! AddActivityViewController
+        vc.trip = trip
         
+        present(vc,animated: true)
     }
+    
+    
     
     func handleCancelAction(action:UIAlertAction) {
         

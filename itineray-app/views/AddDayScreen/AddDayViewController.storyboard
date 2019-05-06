@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,36 +21,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0C-ya-OlU" customClass="PopOverView" customModule="itineray_app" customModuleProvider="target">
-                                <rect key="frame" x="5" y="64" width="404" height="300"/>
+                                <rect key="frame" x="5" y="64" width="404" height="420"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="29B-Cx-Dsd">
-                                        <rect key="frame" x="10" y="10" width="384" height="280"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="29B-Cx-Dsd">
+                                        <rect key="frame" x="10" y="10" width="384" height="400"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blv-fS-F1K">
-                                                <rect key="frame" x="0.0" y="0.0" width="384" height="51.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Add a Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blv-fS-F1K">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="70"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
                                                 <color key="textColor" name="Tint"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a3X-bL-YjS">
-                                                <rect key="frame" x="0.0" y="76.5" width="384" height="51"/>
+                                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="252" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="SDu-Bi-ZI7">
+                                                <rect key="frame" x="0.0" y="78" width="384" height="216"/>
+                                                <color key="backgroundColor" name="Accent"/>
+                                                <color key="tintColor" name="Tint"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="578782641.54901898">
+                                                    <!--2019-05-05 20:57:21 +0000-->
+                                                </date>
+                                            </datePicker>
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aRA-RM-xfO">
+                                                <rect key="frame" x="0.0" y="302" width="384" height="45"/>
                                                 <color key="backgroundColor" red="0.1410615003" green="0.1967614674" blue="0.31037833120000002" alpha="0.61114083900000005" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" name="Tint"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aRA-RM-xfO">
-                                                <rect key="frame" x="0.0" y="152.5" width="384" height="51.5"/>
-                                                <color key="backgroundColor" red="0.1410615003" green="0.1967614674" blue="0.31037833120000002" alpha="0.61114083900000005" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="textColor" name="Tint"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="mAF-aG-NZO" id="qcW-Z8-dun"/>
+                                                </connections>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="8qO-jv-ZOp">
-                                                <rect key="frame" x="0.0" y="229" width="384" height="51"/>
+                                                <rect key="frame" x="0.0" y="355" width="384" height="45"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBV-ig-dAk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="162" height="51"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="162" height="45"/>
                                                         <color key="backgroundColor" name="Tint"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                                         <state key="normal" title="cancel">
@@ -60,7 +65,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IY5-Ae-dKY">
-                                                        <rect key="frame" x="222" y="0.0" width="162" height="51"/>
+                                                        <rect key="frame" x="222" y="0.0" width="162" height="45"/>
                                                         <color key="backgroundColor" name="Tint"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                                         <state key="normal" title="save">
@@ -74,14 +79,17 @@
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="EXZ-Nq-ggm"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" name="BackGround"/>
                                 <constraints>
                                     <constraint firstItem="29B-Cx-Dsd" firstAttribute="top" secondItem="I0C-ya-OlU" secondAttribute="top" constant="10" id="VJW-Vg-8HX"/>
                                     <constraint firstAttribute="bottom" secondItem="29B-Cx-Dsd" secondAttribute="bottom" constant="10" id="YIk-Fh-uMT"/>
-                                    <constraint firstAttribute="height" constant="300" id="f1Y-A7-wJF"/>
                                     <constraint firstItem="29B-Cx-Dsd" firstAttribute="leading" secondItem="I0C-ya-OlU" secondAttribute="leading" constant="10" id="m1s-Ve-hez"/>
+                                    <constraint firstAttribute="height" constant="420" id="nlN-x3-9xK"/>
                                     <constraint firstAttribute="trailing" secondItem="29B-Cx-Dsd" secondAttribute="trailing" constant="10" id="zgC-MT-7D5"/>
                                 </constraints>
                             </view>
@@ -97,8 +105,8 @@
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="QBV-ig-dAk" id="bKh-F6-ySv"/>
+                        <outlet property="datePicker" destination="SDu-Bi-ZI7" id="gXL-SX-rzs"/>
                         <outlet property="dayLabel" destination="blv-fS-F1K" id="FHE-Wj-Ync"/>
-                        <outlet property="dayTitleTextFiield" destination="a3X-bL-YjS" id="kmj-9g-5ca"/>
                         <outlet property="saveButton" destination="IY5-Ae-dKY" id="hvO-Jf-9lj"/>
                         <outlet property="subtitleTextField" destination="aRA-RM-xfO" id="Tkv-Xb-2A1"/>
                     </connections>
@@ -109,6 +117,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="Accent">
+            <color red="0.47450980392156861" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="BackGround">
             <color red="0.078431372549019607" green="0.094117647058823528" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -116,4 +127,5 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <color key="tintColor" name="Tint"/>
 </document>

@@ -13,7 +13,11 @@ struct TripModel {
     var id :UUID
     var title:String!
     var image:UIImage?
-    var days = [DayModel]()
+    var days = [DayModel](){
+        didSet {
+            days = days.sorted(by: { $0.title < $1.title })
+        }
+    }
     
     
     init(title:String,image:UIImage?=nil,days:[DayModel]? = nil) {

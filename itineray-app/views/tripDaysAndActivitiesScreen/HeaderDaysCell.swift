@@ -22,7 +22,8 @@ class HeaderDaysCell: UITableViewCell {
     }
 
     func configureCell(dayModel:DayModel){
-        titleLabel.text = dayModel.title
+       
+        titleLabel.text = dayModel.title.mediumDate()
         subTitleLabel.text = dayModel.subTitle
     }
 
