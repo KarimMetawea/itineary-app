@@ -76,6 +76,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slice" translatesAutoresizingMaskIntoConstraints="NO" id="e0y-2c-UNu">
+                                <rect key="frame" x="87" y="284" width="240" height="240"/>
+                                <color key="backgroundColor" name="BackGround"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="Oa6-nI-xig"/>
+                                    <constraint firstAttribute="width" constant="240" id="wys-tY-hyB"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGm-6p-tPg">
                                 <rect key="frame" x="333" y="713" width="65" height="65"/>
                                 <color key="backgroundColor" name="Accent"/>
@@ -94,11 +102,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="e0y-2c-UNu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GDm-Hn-eoa"/>
                             <constraint firstItem="sMV-br-Mcv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HBA-m9-AXk"/>
                             <constraint firstAttribute="bottom" secondItem="sMV-br-Mcv" secondAttribute="bottom" id="RF7-oe-qz2"/>
                             <constraint firstAttribute="bottom" secondItem="VGm-6p-tPg" secondAttribute="bottom" constant="30" id="UxJ-ST-L5Q"/>
                             <constraint firstItem="sMV-br-Mcv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dEz-Dm-waC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VGm-6p-tPg" secondAttribute="trailing" constant="16" id="gWZ-rx-hdb"/>
+                            <constraint firstItem="e0y-2c-UNu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jdz-Gb-mTB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sMV-br-Mcv" secondAttribute="trailing" id="qgp-vO-Z9O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -107,6 +117,7 @@
                     <connections>
                         <outlet property="addTripButton" destination="VGm-6p-tPg" id="Ad0-F0-kMP"/>
                         <outlet property="helpView" destination="ZzA-bl-d63" id="BoD-lV-ZSO"/>
+                        <outlet property="logoImageView" destination="e0y-2c-UNu" id="Jqg-1y-wpe"/>
                         <outlet property="tableView" destination="sMV-br-Mcv" id="zan-3o-nwR"/>
                     </connections>
                 </viewController>
@@ -370,6 +381,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Slice" width="512" height="512"/>
         <image name="deleteAction" width="252" height="121"/>
         <image name="editAction" width="211" height="121"/>
         <namedColor name="Accent">

@@ -13,6 +13,7 @@ class TripsViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addTripButton: UIButton!
     @IBOutlet var helpView: UIVisualEffectView!
+    @IBOutlet weak var logoImageView: UIImageView!
     //    the index of the trip the user is trying to edit
     var editedIndex:Int?
 //    constants
@@ -22,7 +23,7 @@ class TripsViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        logoImageView.isHidden = true
         
       tableView.delegate = self
       tableView.dataSource = self
@@ -40,9 +41,21 @@ class TripsViewController: UIViewController{
                     self.helpView.frame = self.view.bounds
                     self.view.addSubview(self.helpView)
                 }
+            }else {
+                self.logoImageView.isHidden = false
+                UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseIn], animations: {
+                    self.logoImageView.alpha = 0
+                    self.logoImageView.transform  = CGAffineTransform(rotationAngle: CGFloat(Double.pi)).scaledBy(x: 2, y: 2)
+                    
+                    //            let xRotation = CATransform3DMakeRotation(CGFloat(Double.pi), 1, 0, 0)
+                    //            self.logoImageView.layer.transform = CATransform3DConcat( self.logoImageView.layer.transform, xRotation)
+                    
+                }, completion: nil)
             }
             
         }
+        
+        
     }
     
 //
@@ -102,6 +115,9 @@ extension TripsViewController:UITableViewDelegate,UITableViewDataSource {
             
         }
        deleteAction.image = UIImage(named: "deleteButton")
+       deleteAction.backgroundColor = Theme.accentColor
+        
+       
        
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }

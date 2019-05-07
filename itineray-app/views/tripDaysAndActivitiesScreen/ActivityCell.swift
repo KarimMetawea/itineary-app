@@ -35,15 +35,15 @@ class ActivityCell: UITableViewCell {
         switch activityType{
             
         case .auto:
-            return #imageLiteral(resourceName: "car")
+            return UIImage(named: "auto")!
         case .unsualActivity:
-            return #imageLiteral(resourceName: "hanging-out")
+            return UIImage(named: "unsualActivity")!
         case .flight:
-            return #imageLiteral(resourceName: "flight")
+            return UIImage(named: "flight")!
         case .food:
-            return #imageLiteral(resourceName: "food")
+            return UIImage(named: "food")!
         case .hotel:
-            return #imageLiteral(resourceName: "library")
+            return UIImage(named: "hotel")!
         }
     }
     

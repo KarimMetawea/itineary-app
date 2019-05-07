@@ -86,6 +86,21 @@ class ActivitiesViewController: UIViewController {
         let storyboard = UIStoryboard(name: String(describing: AddActivityViewController.self), bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as! AddActivityViewController
         vc.trip = trip
+        vc.tripIndex = DataModel.trips.firstIndex(where: { $0.id == tripId
+        })
+        vc.onSave = {[weak self] activityModel,dayIndex in
+            guard let strongSelf = self else { return }
+            
+            //            it needs to be called before appending daymodel to ensure trip.count matchs
+            strongSelf.trip?.days[dayIndex].activities.append(activityModel)
+
+            let row = (strongSelf.trip?.days[dayIndex].activities.count)! - 1
+        
+            let indexPath = IndexPath(row: row , section: dayIndex)
+            strongSelf.tableView.insertRows(at: [indexPath], with: .automatic)
+//            strongSelf.tableView.reloadData()
+            
+        }
         
         present(vc,animated: true)
     }

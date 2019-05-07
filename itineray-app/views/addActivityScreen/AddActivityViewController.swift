@@ -8,15 +8,20 @@
 
 import UIKit
 
-class AddActivityViewController: UIViewController {
+class AddActivityViewController: UITableViewController {
     
     @IBOutlet weak var activityLabel: UILabel!
     @IBOutlet weak var dayPicker: UIPickerView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var subtitleTextField: UITextField!
+    @IBOutlet var activityTypeButtons: [UIButton]!
     
     var tripIndex:Int!
     var trip:TripModel!
+    var activityType:ActivityType = .unsualActivity
+ 
+    
+    var onSave:((ActivityModel,Int)->())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +29,36 @@ class AddActivityViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
+    @IBAction func activityButtonPressed(_ sender: UIButton) {
+        activityTypeButtons.forEach({$0.tintColor = Theme.borderColor})
+        
+        sender.tintColor = Theme.accentColor
+        switch sender.tag {
+        case 1:
+            activityType = .auto
+        case 2:
+            activityType = .unsualActivity
+        case 3:
+            activityType = .flight
+        case 4:
+            activityType = .food
+        case 5:
+            activityType = .hotel
+        default:
+            activityType = .unsualActivity
+        }
+    }
+    
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
+        let dayIndex = dayPicker.selectedRow(inComponent: 0)
+        guard titleTextField.hasValue , let title = titleTextField.text else {return}
+        
+         let activity = ActivityModel(title: title, subTitle: subtitleTextField.text ?? "", activity: activityType)
+        ActivityFunctions.createActivity(tripIndex: tripIndex, dayIndex: dayIndex, activity: activity)
+        if let onSave = onSave {
+            onSave(activity,dayIndex)
+        }
         
         
         dismiss(animated: true, completion: nil)
@@ -33,6 +66,9 @@ class AddActivityViewController: UIViewController {
     
     @IBAction func canceButtonPressed(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func finishedEditing(_ sender: UITextField) {
+        sender.resignFirstResponder()
     }
 }
 
