@@ -106,7 +106,6 @@
                                                                         <constraint firstAttribute="width" constant="44" id="0ki-8l-FYe"/>
                                                                         <constraint firstAttribute="height" constant="44" id="AKf-bk-rQi"/>
                                                                     </constraints>
-                                                                    <color key="tintColor" name="Border"/>
                                                                     <state key="normal" image="auto"/>
                                                                     <connections>
                                                                         <action selector="activityButtonPressed:" destination="QFC-FX-cjG" eventType="touchUpInside" id="csv-iH-Ooi"/>
@@ -118,7 +117,6 @@
                                                                         <constraint firstAttribute="width" constant="44" id="dgz-5f-3fy"/>
                                                                         <constraint firstAttribute="height" constant="44" id="jEc-Md-gO8"/>
                                                                     </constraints>
-                                                                    <color key="tintColor" name="Accent"/>
                                                                     <state key="normal" image="unsualActivity"/>
                                                                     <connections>
                                                                         <action selector="activityButtonPressed:" destination="QFC-FX-cjG" eventType="touchUpInside" id="xGF-QG-Dsn"/>
@@ -130,7 +128,6 @@
                                                                         <constraint firstAttribute="height" constant="44" id="1Vb-S5-lrD"/>
                                                                         <constraint firstAttribute="width" constant="44" id="DYC-Je-8Qx"/>
                                                                     </constraints>
-                                                                    <color key="tintColor" name="Border"/>
                                                                     <state key="normal" image="flight"/>
                                                                     <connections>
                                                                         <action selector="activityButtonPressed:" destination="QFC-FX-cjG" eventType="touchUpInside" id="evo-CM-6NZ"/>
@@ -142,7 +139,6 @@
                                                                         <constraint firstAttribute="width" constant="44" id="U2D-dz-kGr"/>
                                                                         <constraint firstAttribute="height" constant="44" id="uGx-9P-eqc"/>
                                                                     </constraints>
-                                                                    <color key="tintColor" name="Border"/>
                                                                     <state key="normal" image="food"/>
                                                                     <connections>
                                                                         <action selector="activityButtonPressed:" destination="QFC-FX-cjG" eventType="touchUpInside" id="8aI-XP-U0i"/>
@@ -154,7 +150,6 @@
                                                                         <constraint firstAttribute="width" constant="44" id="YZW-fz-Nyc"/>
                                                                         <constraint firstAttribute="height" constant="44" id="fQm-PI-0Jr"/>
                                                                     </constraints>
-                                                                    <color key="tintColor" name="Border"/>
                                                                     <state key="normal" image="hotel"/>
                                                                     <connections>
                                                                         <action selector="activityButtonPressed:" destination="QFC-FX-cjG" eventType="touchUpInside" id="rT6-cm-tSi"/>
@@ -242,11 +237,9 @@
         <namedColor name="BackGround">
             <color red="0.078431372549019607" green="0.094117647058823528" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Border">
-            <color red="0.20784313725490197" green="0.27058823529411763" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Tint">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <color key="tintColor" name="Tint"/>
 </document>

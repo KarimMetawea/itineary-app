@@ -19,14 +19,27 @@ class AddActivityViewController: UITableViewController {
     var tripIndex:Int!
     var trip:TripModel!
     var activityType:ActivityType = .unsualActivity
+    var dayIndexToEdit:Int?
+    var activityToEdit:ActivityModel?
+    
+    var doneUpdating:((ActivityModel,Int,Int)->())?
  
     
     var onSave:((ActivityModel,Int)->())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let dayIndex = dayIndexToEdit , let activityToEdit = activityToEdit{
+            activityLabel.text = "Edit Activity"
+            dayPicker.selectRow(dayIndex, inComponent: 0, animated: true)
+            titleTextField.text = activityToEdit.title
+            subtitleTextField.text = activityToEdit.subTitle
+            activityButtonPressed(activityTypeButtons![activityToEdit.activityType.rawValue])
+            
+            
+        }
+        
+          activityButtonPressed(activityTypeButtons[activityType.rawValue])
     }
     
     
@@ -34,6 +47,7 @@ class AddActivityViewController: UITableViewController {
         activityTypeButtons.forEach({$0.tintColor = Theme.borderColor})
         
         sender.tintColor = Theme.accentColor
+        
         switch sender.tag {
         case 1:
             activityType = .auto
@@ -52,13 +66,29 @@ class AddActivityViewController: UITableViewController {
     
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
         let dayIndex = dayPicker.selectedRow(inComponent: 0)
+        
         guard titleTextField.hasValue , let title = titleTextField.text else {return}
         
-         let activity = ActivityModel(title: title, subTitle: subtitleTextField.text ?? "", activity: activityType)
-        ActivityFunctions.createActivity(tripIndex: tripIndex, dayIndex: dayIndex, activity: activity)
-        if let onSave = onSave {
-            onSave(activity,dayIndex)
+        if activityToEdit != nil {
+            
+            activityToEdit?.title = title
+            activityToEdit?.subTitle = subtitleTextField.text ?? ""
+            activityToEdit?.activityType = activityType
+            self.doneUpdating?(activityToEdit!,dayIndexToEdit!,dayIndex)
+            
+            ActivityFunctions.updateActivity(tripIndex: tripIndex, oldDayIndex: dayIndexToEdit!, newDayIndex: dayIndex, activity: activityToEdit!)
+            
+        }else{
+         
+            let activity = ActivityModel(title: title, subTitle: subtitleTextField.text ?? "", activity: activityType)
+            ActivityFunctions.createActivity(tripIndex: tripIndex, dayIndex: dayIndex, activity: activity)
+            if let onSave = onSave {
+                onSave(activity,dayIndex)
+            }
+            
         }
+        
+        
         
         
         dismiss(animated: true, completion: nil)

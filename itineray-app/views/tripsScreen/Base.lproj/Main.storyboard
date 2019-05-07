@@ -292,7 +292,7 @@
                                             <constraints>
                                                 <constraint firstItem="bth-Jq-fai" firstAttribute="top" secondItem="MVb-52-fl2" secondAttribute="topMargin" id="DAv-eI-POG"/>
                                                 <constraint firstItem="bth-Jq-fai" firstAttribute="leading" secondItem="MVb-52-fl2" secondAttribute="leadingMargin" id="E8t-N4-ve9"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="bth-Jq-fai" secondAttribute="bottom" id="SuY-q5-hFa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bth-Jq-fai" secondAttribute="bottom" priority="999" id="SuY-q5-hFa"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bth-Jq-fai" secondAttribute="trailing" id="WV3-4w-r1g"/>
                                             </constraints>
                                         </tableViewCellContentView>

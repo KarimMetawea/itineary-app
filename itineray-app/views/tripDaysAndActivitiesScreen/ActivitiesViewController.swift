@@ -61,8 +61,7 @@ class ActivitiesViewController: UIViewController {
     func handleAddDay(action:UIAlertAction) {
         let storyboard = UIStoryboard(name: String(describing: AddDayViewController.self), bundle: nil)
         let vc = storyboard.instantiateInitialViewController()! as! AddDayViewController
-        vc.tripIndex = DataModel.trips.firstIndex(where: { $0.id == tripId
-        })
+        vc.tripIndex = getTripIndex()
         vc.tripModel = trip
         
         vc.onSave = {[weak self] dayModel in
@@ -82,12 +81,18 @@ class ActivitiesViewController: UIViewController {
     }
     
     
+    fileprivate func getTripIndex() -> Int {
+        return DataModel.trips.firstIndex(where: { $0.id == tripId
+        })!
+    }
+    
+    
+    
     func handleAddActivity(action:UIAlertAction) {
         let storyboard = UIStoryboard(name: String(describing: AddActivityViewController.self), bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as! AddActivityViewController
         vc.trip = trip
-        vc.tripIndex = DataModel.trips.firstIndex(where: { $0.id == tripId
-        })
+        vc.tripIndex = getTripIndex()
         vc.onSave = {[weak self] activityModel,dayIndex in
             guard let strongSelf = self else { return }
             
@@ -171,6 +176,88 @@ extension ActivitiesViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ativityCellHeight
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+         let activity = trip!.days[indexPath.section].activities[indexPath.row]
+        
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "delete") { (action, view, success) in
+        
+            let ac = UIAlertController(title: "Delete Activity", message: "are you sure you want to delete this activity", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action) in
+                
+                ActivityFunctions.deleteActivity(tripIndex: self.getTripIndex(), dayIndex: indexPath.section, activity: activity)
+                self.trip!.days[indexPath.section].activities.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                success(true)
+            }))
+            ac.addAction(UIAlertAction(title: "cancel", style: .destructive, handler: { (action) in
+                success(false)
+            }))
+            self.present(ac,animated: true)
+            
+        }
+        deleteAction.image = UIImage(named: "deleteButton")
+        deleteAction.backgroundColor = Theme.accentColor
+        
+        
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { [weak self]  (action, view, success) in
+            let storboard  = UIStoryboard(name: String(describing: AddActivityViewController.self), bundle: nil)
+            let vc = storboard.instantiateInitialViewController() as! AddActivityViewController
+            vc.tripIndex = self?.getTripIndex()
+            vc.trip = self?.trip
+            vc.dayIndexToEdit = indexPath.section
+            vc.activityToEdit = self?.trip?.days[indexPath.section].activities[indexPath.row]
+            
+            vc.doneUpdating = {[weak self] activity, oldIndex, newIndex in
+                guard let strongSelf = self else { return }
+                let oldActivityIndex = strongSelf.trip?.days[oldIndex].activities.firstIndex(where: { (model) -> Bool in
+                    model.id == activity.id
+                })
+                
+                if oldIndex == newIndex{
+                    strongSelf.trip?.days[oldIndex].activities[oldActivityIndex!] = activity
+                    let indexPath = IndexPath(row: oldActivityIndex!, section: oldIndex)
+                    tableView.reloadRows(at: [indexPath], with: .automatic)
+                } else {
+                    strongSelf.trip?.days[oldIndex].activities.remove(at: oldActivityIndex!)
+                    strongSelf.trip?.days[newIndex].activities.append(activity)
+                    let newActivityIndex = strongSelf.trip?.days[newIndex].activities.firstIndex(where: { (model) -> Bool in
+                        model.id == activity.id
+                    })
+                    
+                    strongSelf.tableView.performBatchUpdates({
+                        
+                        strongSelf.tableView.deleteRows(at: [indexPath], with: .fade)
+                        
+                        let insertIndexPath = IndexPath(row: newActivityIndex!, section: newIndex)
+                        strongSelf.tableView.insertRows(at: [insertIndexPath], with: .automatic)
+                    })
+                }
+                
+                
+            }
+            
+            
+            
+            
+            self?.present(vc,animated: true)
+            
+            success(true)
+        }
+      
+        editAction.image = #imageLiteral(resourceName: "edit")
+        editAction.backgroundColor = Theme.borderColor
+        
+        return UISwipeActionsConfiguration(actions: [editAction])
+    }
+    
     
     
 }

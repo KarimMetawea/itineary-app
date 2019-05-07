@@ -9,6 +9,7 @@
 import UIKit
 class TripFunctions {
     static func createTrip(trip:TripModel){
+        
         DataModel.trips.append(trip)
     }
     
