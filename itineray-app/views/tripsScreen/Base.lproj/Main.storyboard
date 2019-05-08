@@ -183,7 +183,7 @@
             </objects>
             <point key="canvasLocation" x="962.31884057971024" y="26.785714285714285"/>
         </scene>
-        <!--Activities View Controller-->
+        <!--Title-->
         <scene sceneID="neh-fY-z1x">
             <objects>
                 <viewController storyboardIdentifier="activitiesViewController" id="n9w-SX-3kT" customClass="ActivitiesViewController" customModule="itineray_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -337,6 +337,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Wq-rK-PuO"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="ztE-NG-8lt">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="h1f-fZ-hnx">
+                            <connections>
+                                <action selector="toggleEditMode:" destination="n9w-SX-3kT" id="BlR-Tt-1pM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addDaysButton" destination="XbK-cK-0FJ" id="Pwi-OW-Fqa"/>
                         <outlet property="backGroundImage" destination="Nme-5e-lln" id="f9I-TQ-ZKZ"/>

@@ -129,6 +129,11 @@ class ActivitiesViewController: UIViewController {
         }
     }
     
+    @IBAction func toggleEditMode(_ sender: UIBarButtonItem) {
+        tableView.isEditing.toggle()
+        sender.title = sender.title == "Edit" ? "Done":"Edit"
+    }
+    
    
     
 }
@@ -257,7 +262,18 @@ extension ActivitiesViewController:UITableViewDelegate,UITableViewDataSource{
         
         return UISwipeActionsConfiguration(actions: [editAction])
     }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
-    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let activity = (trip?.days[sourceIndexPath.section].activities[sourceIndexPath.row])!
+        
+        trip?.days[sourceIndexPath.section].activities.remove(at: sourceIndexPath.row)
+        trip?.days[destinationIndexPath.section].activities.insert(activity,at: destinationIndexPath.row)
+        ActivityFunctions.reorderActivity(tripIndex: getTripIndex(), oldDayIndex: sourceIndexPath.section, newDayIndex: destinationIndexPath.section, newActivityIndex: destinationIndexPath.row, activity: activity)
+
+
+    }
     
 }
